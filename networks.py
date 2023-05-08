@@ -6,12 +6,13 @@ class CNN(nn.Module):
     def __init__(self):
         super().__init__()
 
-        self.conv1 = nn.Conv2d(3, 5, 7)        # out = 58
-        self.conv2 = nn.Conv2d(5, 5, 3)       # in = 29, out = 13
+        self.conv1 = nn.Conv2d(3, 5, 3)        # out = 62
+        self.conv2 = nn.Conv2d(5, 10, 3)       # in = 31, out = 14
+        self.conv3 = nn.Conv2d(10, 10, 3)       # in = 12, out = 6
 
         self.pool = nn.MaxPool2d(2)
 
-        self.fc1 = nn.Linear(5 * 13 * 13, 64)
+        self.fc1 = nn.Linear(10 * 6 * 6, 64)
         self.o_n = nn.Linear(64, 1)
 
 
@@ -23,6 +24,9 @@ class CNN(nn.Module):
         out = self.pool(out)
         
         out = self.activation(self.conv2(out))
+        out = self.pool(out)
+
+        out = self.activation(self.conv3(out))
         out = self.pool(out)
 
         out = self.flatten(out)
