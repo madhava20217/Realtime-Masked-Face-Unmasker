@@ -22,3 +22,13 @@ COVID-19 has had a lasting impact on how we live and perceive things. Due to the
 
 The working code can be found in the RUN.ipynb file. Do note that this is in the early phases and optimised for speed. The accuracy of face detection, mask detection and infilling can be improved tremendously.
 
+https://github.com/madhava20217/Masked-Face-Unmasker/assets/88394905/31f1b993-1713-4906-899c-f8bbac8f4c1c
+
+## Issues
+
+The components of the system: the face detector, the mask detector, the segmentation method, and the infiller can be improved tremendously.
+
+1. There are biases prevalent because of the CelebA dataset.
+2. The mask detection network fails to detect other types of masks. It only recognises the blue 3-ply masks to a significant degree.
+3. The face detection algorithm fails to detect faces at an angle.
+4. The segmentation is based on the eye-position. When the eyes are not detected, the segmentation does not happen and neither does the infilling.
