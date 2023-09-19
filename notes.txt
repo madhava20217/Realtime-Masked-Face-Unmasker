@@ -1,0 +1,17 @@
+Ver 2.0
+
+Dataset:
+1. DigiFace1M
+    - p1 : https://facesyntheticspubwedata.blob.core.windows.net/wacv-2023/subjects_100000-133332_5_imgs.zip
+    - p2 : https://facesyntheticspubwedata.blob.core.windows.net/wacv-2023/subjects_133333-166665_5_imgs.zip
+    - p3 : https://facesyntheticspubwedata.blob.core.windows.net/wacv-2023/subjects_166666-199998_5_imgs.zip
+
+
+
+2. CelebA dataset:
+    - courtesy of Liu et. al
+    - https://drive.google.com/file/d/1_ee_0u7vcNLOfNLegJRHmolfH5ICW-XS/view?usp=drive_link, https://drive.google.com/file/d/0B7EVK8r0v71pbThiMVRxWXZ4dU0/view?usp=drive_link&resourcekey=0-z-17UMo1wt4moRL2lu9D8A : annotations
+
+
+TODOS:
+1. https://github.com/timesler/facenet-pytorch#use-this-repo-in-your-own-git-project
