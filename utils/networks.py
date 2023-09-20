@@ -36,6 +36,44 @@ class CNN(nn.Module):
 
         return out
 
+class CNN_256x256(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+        self.conv1 = nn.Conv2d(3, 5, 3)        # out = 254
+        self.conv2 = nn.Conv2d(5, 10, 3)       # in = 127, out = 125
+        self.conv3 = nn.Conv2d(10, 15, 5)       # in = 63, out = 61
+        self.conv4 = nn.Conv2d(15, 20, 7)
+
+        self.pool = nn.MaxPool2d(3)
+
+        # self.fc1 = nn.Linear(135, 64)
+        self.o_n = nn.Linear(735, 1)
+
+
+        self.flatten = nn.Flatten()
+        self.activation = nn.ReLU()
+
+    def forward(self, inpt):
+        out = self.activation(self.conv1(inpt))
+        out = self.pool(out)
+        
+        out = self.activation(self.conv2(out))
+        out = self.pool(out)
+
+        out = self.activation(self.conv3(out))
+        out = self.pool(out)
+
+        out = self.flatten(out)
+
+        # print(out.shape)
+        
+
+        # out = self.activation(self.fc1(out))
+        out = self.o_n(out)
+
+        return out
+
 class EfficientUNet_B0(nn.Module):
     def __init__(self):
         super().__init__()
