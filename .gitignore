@@ -7,3 +7,4 @@ train_faces.pth
 val_faces.pth
 facefiles.pkl
 faces.pth
+utils/__pycache__/*

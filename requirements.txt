@@ -1,0 +1,12 @@
+torch
+torchvision
+opencv-python
+opencv-contrib-python
+albumentations
+efficientunet-pytorch
+tqdm
+pandas
+numpy
+torchmetrics
+torchinfo
+matplotlib
